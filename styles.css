@@ -1,11 +1,13 @@
 body {
+  background-image: url("images/background.jpg");
+  background-size: cover;
   text-align: center;
   background-color: #283149;
 }
 
 h1 {
   font-size: 5rem;
-  color: #dbedf3;
+  color: #0f171a;
   font-family: "Arvo", cursive;
   text-shadow: 3px 0 #da0463;
 }
