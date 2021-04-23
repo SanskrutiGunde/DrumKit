@@ -1,8 +1,16 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 body {
   background-image: url("images/background.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
+  backdrop-filter: blur(4px);
   text-align: center;
   background-color: #283149;
+  height: 100vh;
 }
 
 h1 {
@@ -79,4 +87,8 @@ footer {
   text-align: center;
   margin: 10px;
   background-color: white;
+}
+footer {
+  color: #0f171a;
+  font-size: 1.2rem;
 }
