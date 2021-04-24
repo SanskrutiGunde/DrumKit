@@ -6,11 +6,13 @@ for (var i = 0; i < numberOfDrumButtons; i++) {
     [i].addEventListener("click", function handleClick() {
       var buttonInnerHTML = this.innerHTML;
       makeSound(buttonInnerHTML);
+      buttonAnimation(buttonInnerHTML);
     });
 }
 document.addEventListener("keypress", function (event) {
   //console.log(event);
   makeSound(event.key);
+  buttonAnimation(event.key);
 });
 
 function makeSound(key) {
@@ -63,7 +65,7 @@ function makeSound(key) {
         message: "wrong key",
         title: key + " Key pressed",
         position: "topRight",
-        timeout: 3000,
+        timeout: 500,
       });
   }
 }
@@ -72,6 +74,13 @@ function toastPrint(key) {
     message: "Good",
     title: key + " Key pressed",
     position: "topLeft",
-    timeout: 3000,
+    timeout: 500,
   });
+}
+function buttonAnimation(currentKey) {
+  var activeButton = document.querySelector("." + currentKey);
+  activeButton.classList.add("pressed");
+  setTimeout(function () {
+    activeButton.classList.remove("pressed");
+  }, 100);
 }
